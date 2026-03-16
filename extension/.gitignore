@@ -1,0 +1,8 @@
+# build output
+dist/
+
+# dependencies
+node_modules/
+node_modules/
+*.log
+.DS_Store
