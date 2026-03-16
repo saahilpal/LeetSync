@@ -11,13 +11,13 @@
 
 ---
 
-LeetSync is a powerful Chrome extension that extracts your LeetCode code, lets you write structured analysis (Intuition, Approach, Example Walkthrough), and pushes polished Markdown files to your GitHub repository — organized by 17 DSA patterns.
+LeetSync is a powerful Chrome extension that extracts your LeetCode code, lets you write structured analysis (Intuition, Approach, Example Walkthrough), and pushes polished Markdown files to your GitHub repository — organized by 20 DSA patterns.
 
 ## ✨ Features
 
 - **🚀 One-Click Extract**: Instantly gets the problem title, difficulty, language, and your code from the LeetCode editor.
 - **📝 Structured Solutions**: Integrated fields for Intuition, Approach, and time/space complexity to help you build a professional portfolio.
-- **📂 Auto-Organization**: Pushes to folders based on 17 DSA patterns (Linked List, Trees, Graphs, etc.).
+- **📂 Auto-Organization**: Pushes to folders based on 20 DSA patterns (Linked List, Trees, Graphs, Matrix, etc.).
 - **🎯 In-Page Overlay**: A floating panel that lives inside LeetCode so you never have to switch tabs.
 - **🔒 Private & Secure**: Zero backend. Your GitHub Personal Access Token (PAT) stays in your browser's local storage.
 - **⚡ Manifest V3**: Built with modern extension standards for performance and longevity.
@@ -53,12 +53,17 @@ npm run build
 
 ## 📂 First-Time Repo Setup (Scripts)
 
-GitHub's API cannot create empty folders. To use LeetSync's auto-organization, you must first scaffold the 17 pattern folders in your repository. Run one of these scripts **once** inside your local repository, then push to GitHub.
+GitHub's API cannot create empty folders. To use LeetSync's auto-organization, you must first scaffold the 20 pattern folders in your repository. Run one of these scripts **once** inside your local repository, then push to GitHub.
 
 ### macOS / Linux (Bash/Zsh)
 ```bash
 #!/bin/bash
-patterns=("Arrays & Hashing" "Two Pointers" "Sliding Window" "Stack" "Binary Search" "Linked List" "Trees" "Heap - Priority Queue" "Backtracking" "Tries" "Graphs" "Advanced Graphs" "1-D Dynamic Programming" "2-D Dynamic Programming" "Greedy" "Intervals" "Math & Geometry" "Bit Manipulation")
+patterns=(
+  "Arrays & Hashing" "Two Pointers" "Sliding Window" "Stack" "Binary Search"
+  "Linked List" "Trees" "Heap - Priority Queue" "Backtracking" "Tries"
+  "Graphs" "Advanced Graphs" "1-D Dynamic Programming" "2-D Dynamic Programming"
+  "Greedy" "Intervals" "Math & Geometry" "Bit Manipulation" "Matrix" "String"
+)
 for p in "${patterns[@]}"; do
   mkdir -p "$p"
   echo -e "# $p\n\nSolutions for the **$p** pattern." > "$p/README.md"
@@ -69,7 +74,12 @@ git add . && git commit -m 'init: scaffold pattern folders' && git push
 
 ### Windows (PowerShell)
 ```powershell
-$patterns = @("Arrays & Hashing", "Two Pointers", "Sliding Window", "Stack", "Binary Search", "Linked List", "Trees", "Heap - Priority Queue", "Backtracking", "Tries", "Graphs", "Advanced Graphs", "1-D Dynamic Programming", "2-D Dynamic Programming", "Greedy", "Intervals", "Math & Geometry", "Bit Manipulation")
+$patterns = @(
+  "Arrays & Hashing", "Two Pointers", "Sliding Window", "Stack", "Binary Search",
+  "Linked List", "Trees", "Heap - Priority Queue", "Backtracking", "Tries",
+  "Graphs", "Advanced Graphs", "1-D Dynamic Programming", "2-D Dynamic Programming",
+  "Greedy", "Intervals", "Math & Geometry", "Bit Manipulation", "Matrix", "String"
+)
 foreach ($p in $patterns) {
   New-Item -ItemType Directory -Force -Path $p | Out-Null
   "# $p`n`nSolutions for the **$p** pattern." | Set-Content "$p\README.md"
@@ -81,7 +91,12 @@ git add . ; git commit -m 'init: scaffold pattern folders' ; git push
 ### Windows (CMD)
 ```cmd
 @echo off
-for %%p in ("Arrays & Hashing" "Two Pointers" "Sliding Window" "Stack" "Binary Search" "Linked List" "Trees" "Heap - Priority Queue" "Backtracking" "Tries" "Graphs" "Advanced Graphs" "1-D Dynamic Programming" "2-D Dynamic Programming" "Greedy" "Intervals" "Math & Geometry" "Bit Manipulation") do (
+for %%p in (
+  "Arrays & Hashing" "Two Pointers" "Sliding Window" "Stack" "Binary Search"
+  "Linked List" "Trees" "Heap - Priority Queue" "Backtracking" "Tries"
+  "Graphs" "Advanced Graphs" "1-D Dynamic Programming" "2-D Dynamic Programming"
+  "Greedy" "Intervals" "Math & Geometry" "Bit Manipulation" "Matrix" "String"
+) do (
   mkdir %%~p 2>nul
   echo # %%~p > "%%~p\README.md"
   echo. >> "%%~p\README.md"
