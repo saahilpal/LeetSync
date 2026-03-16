@@ -8,7 +8,7 @@ export const PATTERNS = [
   "Binary Search",
   "Linked List",
   "Trees",
-  "Heap - Priority Queue",
+  "Heap / Priority Queue",
   "Backtracking",
   "Tries",
   "Graphs",
@@ -18,9 +18,7 @@ export const PATTERNS = [
   "Greedy",
   "Intervals",
   "Math & Geometry",
-  "Bit Manipulation",
-  "Matrix",
-  "String"
+  "Bit Manipulation"
 ] as const;
 
 export type Pattern = typeof PATTERNS[number];
