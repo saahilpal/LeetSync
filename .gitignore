@@ -9,3 +9,7 @@ dist
 .vscode
 .idea
 package-lock.json
+.synap/
+.synapse/
+.synapse/*-wal
+.synapse/*-shm
